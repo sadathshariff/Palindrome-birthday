@@ -142,7 +142,7 @@ const inputDate = document.querySelector("#input-date");
 const showBtn = document.querySelector("#show-btn");
 const outputDiv = document.querySelector(".output-div");
 
-function clickHandler(e) {
+function clickHandler() {
   var bdayStr = inputDate.value;
   if (bdayStr !== "") {
     var listOfDate = bdayStr.split("-");
@@ -160,6 +160,8 @@ function clickHandler(e) {
       var [ctr, nextDate] = getNextPalindromeDate(date);
       outputDiv.innerText = `The Next Palindrome is ${nextDate.day}-${nextDate.month}-${nextDate.year} and you missed it by ${ctr} days `;
     }
+  } else {
+    outputDiv.innerText = "Please select the Date!";
   }
 }
 
